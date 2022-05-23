@@ -2,13 +2,13 @@
 <RoomList>
     <rooms roomNumber="SBS-C1">
         <roomType>Single Bedroom Suite</roomType>
-        <bookStartDate>-999999999-01-01</bookStartDate>
-        <bookEndDate>-999999999-01-01</bookEndDate>
+        <bookStartDate>2022-05-23</bookStartDate>
+        <bookEndDate>2022-05-30</bookEndDate>
     </rooms>
     <rooms roomNumber="SBS-C2">
         <roomType>Single Bedroom Suite</roomType>
-        <bookStartDate>-999999999-01-01</bookStartDate>
-        <bookEndDate>-999999999-01-01</bookEndDate>
+        <bookStartDate>2022-05-31</bookStartDate>
+        <bookEndDate>2022-06-02</bookEndDate>
     </rooms>
     <rooms roomNumber="SBS-C3">
         <roomType>Single Bedroom Suite</roomType>
@@ -70,7 +70,6 @@
         <bookStartDate>-999999999-01-01</bookStartDate>
         <bookEndDate>-999999999-01-01</bookEndDate>
     </rooms>
-
     <rooms roomNumber="SR-A10">
         <roomType>Single Room</roomType>
         <bookStartDate>-999999999-01-01</bookStartDate>
