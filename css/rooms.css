@@ -1,0 +1,136 @@
+:root {
+    --primary: #FEA116;
+    --light: #F1F8FF;
+    --dark: #0F172B;
+}
+
+
+
+/* -------------- Pramesh Shrestha , Rajib Paudyal, Rodrigo Reyes -------------- */
+
+/*** Navbar ***/
+.navbar-dark .navbar-nav .nav-link {
+    position: relative;
+    margin-left: 25px;
+    padding: 35px 0;
+    font-size: 15px;
+    color: var(--light) !important;
+    text-transform: uppercase;
+    font-weight: 500;
+    outline: none;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+}
+
+.navbar-dark .navbar-brand img {
+    max-height: 80px;
+}
+
+
+.background {
+    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../images/homepage.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+/* -------------- Rodrigo Reyes -------------- */
+
+.wifi {
+    width: 30px;
+    height: 30px;
+}
+
+.roomType {
+    color: var(--primary);
+}
+
+
+
+
+.section-title {
+    color: var(--primary);
+}
+
+.tv {
+    width: 30px;
+    height: 30px;
+}
+
+.booknow {
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.services {
+    color: var(--dark) !important;
+    cursor: none;
+}
+
+/*** Footer CSS ***/
+
+.footerLinks {
+    text-decoration: none;
+    color: var(--light);
+}
+
+.footerLinks:hover {
+    color: #957bda !important;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0
+}
+
+
+
+ul>li {
+    padding: 4px;
+    color: var(--light)
+}
+
+ul>li:hover {
+    color: #957bda;
+    cursor: pointer
+}
+
+
+.social {
+    color: white;
+    font-size: 20px
+}
+
+
+
+.social>i:hover {
+    color: #957bda;
+    cursor: pointer
+}
+
+
+
+.heading {
+    font-family: 'Titillium Web', sans-serif;
+    color: var(--primary)
+}
+
+/* Horizontal Line */
+.divider {
+    border-top: 2px solid white
+}
+
+.heroText {
+    position: relative;
+    display: inline-block;
+    color: var(--primary);
+}

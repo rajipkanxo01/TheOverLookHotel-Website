@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link href="css/bookingAbout.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <script src="js/bootstrap.bundle.js"></script>
+    <title>Booking Status</title>
+</head>
+
+<body>
+    <!-- -------------- Pramesh Shrestha , Rajib Paudyal, Rodrigo Reyes ---------------->
+
+
+    <!-- whole webpage container -->
+    <div class="container-fluid background p-0">
+        <!-- container for navbar and hero -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark px-4 py-3">
+                <a href="" class="navbar-brand p-0">
+                    <img src="images/logo2.png" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="rooms.html" class="nav-item nav-link">Rooms</a>
+                        <a href="bookingStatus.html" class="nav-item nav-link active">Booking Status</a>
+                        <a href="employees.html" class="nav-item nav-link">Employees</a>
+                        <a href="About.html " class="nav-item nav-link ">About Us</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container pt-5 hero-header mb-0">
+                <div class="container text-center my-2 pt-2 pb-2">
+                    <h1 class=" mb-2  font-weight-bold heroText">Available Rooms</h1>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- -----------------------------------------Pramesh Shrestha------------------------------------>
+
+
+        <!-- Top three rooms in a row with a breakpoint of medium sized screen -->
+        <div class="container bg-light bg-gradient">
+            <!-- using flexbox to center the content -->
+
+
+    <div class="row pt-2">
+        <div class="col col-sm-5">
+            <input class="form-control" type="text" placeholder="from date" id="arrivalDate">
+        </div>
+        <div class="col col-sm-2">
+           
+        </div>
+        <div class="col col-sm-5">
+            <input class="form-control" type="text" placeholder="to date" id="departureDate">
+        </div>
+    </div>
+    <div class="row pt-2">
+        <div class="col">
+            <input type="button" value="Search" class="btn btn-dark" id="search">
+        </div>
+       
+    </div>
+    
+
+
+
+
+            <div class="row d-flex justify-content-evenly">
+
+                <!-- Takes 4 column from medium breakpoint and above. Below medium break point it takes 12 column -->
+                <div class="col-md-4 mt-5">
+                    <!-- using flexbox to center the content, adding border, dark background and text color set to white -->
+                    <h6 class="d-flex justify-content-center border bg-dark text-white">Three Bedroom Suite</h6>
+                    <!-- image becomes responsive and rounded -->
+                    <img class="img-fluid rounded" src="images/threesinglebedroom.jpg" alt="threesinglebedroom">
+                    <!-- adding shadow to the division with padding around and bottom margin -->
+                    <div class="shadow-lg p-3 mb-3 bg-body rounded" id="threeBedRoom">Available Rooms: 3</div>
+                    <div class="shadow-lg p-3 mb-3 bg-body rounded">Price per night: $169</div>
+
+                </div>
+                <div class="col-md-4 mt-5">
+                    <h6 class="d-flex justify-content-center border bg-dark text-white">Two Bedroom Suite</h6>
+                    <img class="img-fluid rounded" src="images/threebedroomsuite.jpg" alt="threebedroomsuite">
+                    <div class="shadow-lg p-3 mb-3 bg-body rounded">Available Rooms: 3</div>
+                    <div class="shadow-lg p-3 mb-3 bg-body rounded">Price per night: $169</div>
+
+                </div>
+                <div class="col-md-4 mt-5">
+                    <h6 class="d-flex justify-content-center border bg-dark text-white">Three Single-Bedroom Suite</h6>
+                    <img class="img-fluid rounded" src="images/Kingsizebedroom.jpg" alt="Kingsize">
+                    <div class="shadow-lg p-3 mb-3 bg-body rounded">Available Rooms: 3</div>
+                    <div class="shadow-lg p-3 mb-3 bg-body rounded">Price per night: $169</div>
+
+                </div>
+            </div>
+
+            <!-- Two rooms in a second row with a breakpoint of medium sized screen -->
+            <div class="row d-flex justify-content-evenly mt-5">
+
+                <!-- Takes 4 column from medium breakpoint and above. Below medium break point it takes 12 column -->
+                <div class="col-md-4">
+                    <!-- using flexbox to center the content, adding border, dark background and text color set to white -->
+                    <h6 class="d-flex justify-content-center border bg-dark text-white">Single Bedroom - Kingsize Bed
+                    </h6>
+                    <!-- image becomes responsive and rounded -->
+                    <img class="img-fluid rounded" src="images/room1.jpg" alt="Kingsizebedroom">
+                    <!-- adding shadow to the division with padding around and bottom margin -->
+                    <div class="shadow-lg p-3 mb-3 bg-body rounded">Available Rooms: 3</div>
+                    <div class="shadow-lg p-3 mb-3 bg-body rounded">Price per night: $169</div>
+
+                </div>
+                <div class="col-md-4">
+                    <h6 class="d-flex justify-content-center border bg-dark text-white">Double Bedroom - Twin Beds</h6>
+                    <img class="img-fluid rounded" src="images/room2.jpg" alt="threebedroomsuite">
+                    <div class="shadow-lg p-3 mb-3 bg-body rounded">Available Rooms: 3</div>
+                    <div class="shadow-lg p-3 mb-3 bg-body rounded">Price per night: $169</div>
+                    <!-- <p class=" border bg-dark text-white mt-2 ps-1">Price per night: $169</p> -->
+                </div>
+            </div>
+
+
+            <!-- Carousel 1 starts here -->
+            <div class="container">
+                <div class="row">
+                    <!-- Takes 6 column from medium breakpoint and above. Below medium break point it takes 12 column and adds top margin -->
+                    <div class="col-md-6 mt-5 mb-5">
+                        <!-- adding carousel to slide the image -->
+                        <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouse1" data-bs-slide-to="0"
+                                    class="active"></button>
+                                <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#carousel1" data-bs-slide-to="2"></button>
+
+                            </div>
+                            <!-- carousel items -->
+                            <div class="carousel-inner">
+                                <!-- active displays current picture on webpage -->
+                                <div class="carousel-item active">
+                                    <img class="img-fluid rounded d-block w-100" src="images/carousel1.jpg"
+                                        alt="hotelimage">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="img-fluid rounded d-block w-100" src="images/carousel2.jpg"
+                                        alt="hotelimage">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="img-fluid rounded d-block w-100" src="images/carousel3.jpg"
+                                        alt="hotelimage">
+                                </div>
+                            </div>
+                            <!-- previous button -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel1"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+
+                            </button>
+                            <!-- next button -->
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel1"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- Carousel 2 starts here -->
+                    <!-- Takes 6 column from medium breakpoint and above. Below medium break point it takes 12 column and adds top margin -->
+                    <div class="col-md-6 mt-5 mb-5">
+                        <!-- adding carousel to slide the image -->
+                        <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carousel2" data-bs-slide-to="0"
+                                    class="active"></button>
+                                <button type="button" data-bs-target="#carousel2" data-bs-slide-to="1"></button>
+                                <button type="button" data-bs-target="#carousel2" data-bs-slide-to="2"></button>
+
+                            </div>
+                            <!-- carousel items -->
+                            <div class="carousel-inner">
+                                <!-- active displays current picture on webpage -->
+                                <div class="carousel-item active">
+                                    <img class="img-fluid rounded d-block w-100" src="images/carousel4.jpg"
+                                        alt="hotelimage">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="img-fluid rounded d-block w-100" src="images/carousel5.jpg"
+                                        alt="hotelimage">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="img-fluid rounded d-block w-100" src="images/carousel6.jpg"
+                                        alt="hotelimage">
+                                </div>
+                            </div>
+                            <!-- previous button -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carousel2"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span>
+
+                            </button>
+                            <!-- next button -->
+                            <button class="carousel-control-next" type="button" data-bs-target="#carousel2"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span>
+
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- Footer Start -->
+        <div class="container-fluid  mt-5 px-4 bg-dark pt-5">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col-md-4 ">
+                        <div class="footer-text ">
+                            <div class="d-flex">
+                                <h1 class="font-weight-bold mr-2 px-3 heroText"> The Overlook Hotel
+                                </h1>
+
+                            </div>
+                            <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Commodi non
+                                pariatur numquam animi nam at impedit odit nisi.</p>
+                            <div class="social mt-2 mb-3">
+
+                                <a href="https://www.facebook.com/" class="footerLinks"> <i
+                                        class="fa fa-facebook-official fa-lg px-2 "></i>
+                                </a>
+                                <a href="https://www.instagram.comc/" class="footerLinks"> <i
+                                        class="fa fa-lg fa-instagram px-2"></i>
+                                </a>
+                                <a href="https://www.twitter.com/" class="footerLinks"> <i
+                                        class="fa fa-lg fa-twitter px-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-md-2 ">
+                        <h5 class="heading">Useful Links</h5>
+                        <ul>
+                            <li><a href="/index.html" class="footerLinks">Home</a> </li>
+                            <li><a href="/rooms.html" class="footerLinks">Rooms</a> </li>
+                            <li><a href="/booking.html" class=" footerLinks">Booking Status</a> </li>
+                            <li><a href="/employees.html" class="footerLinks">Employees</a> </li>
+                            <li><a href="/aboutus.html" class=" footerLinks">About Us</a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2 ">
+                        <h5 class="heading">Legal</h5>
+                        <ul>
+                            <li>Terms of Use</li>
+                            <li>Privacy Policy</li>
+                            <li>Cookie Policy</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 ">
+                        <h5 class="heading">Have A Question?</h5>
+                        <ul>
+                            <li><i class="fa-solid fa-location-dot p-1"></i> 8700 Horsens </li>
+                            <li><i class="fa-solid fa-at p-1"></i> overlookhotel@gmail.com</li>
+                            <li><i class="fa-solid fa-phone p-1"></i> 91 40 00 00 </li>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!--Horizontal line -->
+                <div class="divider mb-4"> </div>
+                <div class="row text-white" style="font-size:10px;">
+                    <div class="col-md-6 ">
+                        <div>
+                            <p><i class="fa fa-copyright"></i> 2022 The Overlook Hotel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Footer End -->
+    </div>
+      <script src="js/jquery-3.5.1.min.js"></script>
+      <script src="js/script.js"></script>
+      <script src="js/jquery-ui.min.js"></script>
+
+     
+</body>
+
+</html>
