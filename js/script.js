@@ -31,12 +31,12 @@
 
 
 $("#search").click(function () {
-    var singleBedRoomSuiteCount = 0;
-    var threeSingleBedRoomSuiteCount = 0;
-    var singleRoomCount = 0;
-    var twoSingleRoomSuiteCount = 0;
-    var doubleRoomCount = 0;
 
+    var singleBedRoomSuiteCount = 3;
+    var threeSingleBedRoomSuiteCount = 1;
+    var twoSingleRoomSuiteCount = 1;
+    var singleRoomCount = 10;
+    var doubleRoomCount = 27;
 
     var selectedArrivalDate = $("#arrivalDate").val();
     var selectedDepartureDate = $("#departureDate").val();
@@ -62,18 +62,60 @@ $("#search").click(function () {
             if(((selectedArrivalDate <= roomStartDate && roomStartDate <=
              selectedDepartureDate || selectedArrivalDate <= roomEndDate &&
              roomEndDate <= selectedDepartureDate))) {
-                 alert("Not available " + roomNumber);
+                 if(singleBedRoomSuiteCount > 0)
+                 {
+                    singleBedRoomSuiteCount--;
+                 }
+                 
              } 
+        }  
+        
+        if ((roomType === "3-Single Bedroom Suite")) {
+            if(((selectedArrivalDate <= roomStartDate && roomStartDate <=
+                selectedDepartureDate || selectedArrivalDate <= roomEndDate &&
+                roomEndDate <= selectedDepartureDate))) {
+                    threeSingleBedRoomSuiteCount = 0;
+                } 
+            }  
+        
+        if ((roomType === "2-Single Bedroom Suite")) {
+            if(((selectedArrivalDate <= roomStartDate && roomStartDate <=
+                selectedDepartureDate || selectedArrivalDate <= roomEndDate &&
+                roomEndDate <= selectedDepartureDate))) {
+                    twoSingleRoomSuiteCount = 0;
+                } 
+            }  
 
-            // if (((roomStartDate >= selectedArrivalDate && roomStartDate <= selectedDepartureDate) 
-            //  (roomEndDate >= selectedArrivalDate && roomEndDate <= selectedDepartureDate))) {
-            //      alert ("booked " + roomNumber )
-             }
-             else {
-                 alert('not booked ' + roomNumber );
-             }
-        };
+        if ((roomType === "Single Room")) {
+            if(((selectedArrivalDate <= roomStartDate && roomStartDate <=
+                selectedDepartureDate || selectedArrivalDate <= roomEndDate &&
+                roomEndDate <= selectedDepartureDate))) {
+                    if(singleRoomCount > 0)
+                    {
+                        singleRoomCount--;
+                    }
+                    
+                } 
+            } 
+
+        if ((roomType === "Double Room")) {
+            if(((selectedArrivalDate <= roomStartDate && roomStartDate <=
+                selectedDepartureDate || selectedArrivalDate <= roomEndDate &&
+                roomEndDate <= selectedDepartureDate))) {
+                    if(doubleRoomCount > 0)
+                    {
+                        doubleRoomCount--;
+                    }
+                    
+                } 
+            } 
+        });
+
+        $("#singleBedRoomSuite").html(singleBedRoomSuiteCount);
+        $("#threeSingleBedRoomSuite").html(threeSingleBedRoomSuiteCount);
+        $("#twoSingleBedRoomSuite").html(twoSingleRoomSuiteCount);
+        $("#singleBedRoom").html(singleRoomCount);
+        $("#doubleBedRoom").html(doubleRoomCount);
     },
     ) 
 });
-})
