@@ -58,13 +58,12 @@ $("#search").click(function () {
         var newSelectedDepartureDate = new Date(selectedDepartureDate);
   
 
-         if ((roomType === "Single Bedroom Suite")) {
-                if (!((newSelectedArrivalDate > newRoomStartDate && newSelectedDepartureDate < newRoomEndDate)
-                    || (newSelectedArrivalDate < newRoomStartDate && newSelectedDepartureDate > newRoomEndDate) ||
-                    (newSelectedArrivalDate < newRoomStartDate && newSelectedDepartureDate < newRoomEndDate) ||
-                    (newSelectedArrivalDate>newRoomStartDate && newSelectedDepartureDate>newRoomEndDate))) {
-                        alert("it id booked " + roomNumber )
-                    }
+        if ((roomType === "Single Bedroom Suite")) {
+            if(((selectedArrivalDate <= roomStartDate && roomStartDate <=
+             selectedDepartureDate || selectedArrivalDate <= roomEndDate &&
+             roomEndDate <= selectedDepartureDate))) {
+                 alert("Not available " + roomNumber);
+             } 
 
             // if (((roomStartDate >= selectedArrivalDate && roomStartDate <= selectedDepartureDate) 
             //  (roomEndDate >= selectedArrivalDate && roomEndDate <= selectedDepartureDate))) {
