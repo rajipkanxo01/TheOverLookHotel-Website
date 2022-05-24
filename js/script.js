@@ -19,10 +19,10 @@
  $(function () {
     // initializing arrival date and departure date
     $("#arrivalDate").datepicker({
-        minDate: 0
+        minDate: 0 , dateFormat: "yy-mm-dd"
     });
     $("#departureDate").datepicker({
-        minDate: 0
+        minDate: 0 , dateFormat: "yy-mm-dd"
     });
 }),
 
@@ -42,12 +42,12 @@
 
 
 // get bookstartdate and book end date
-$.get("rooms.xml"), function (xml) {
-    var bookStartDate = $(xml).find("bookStartDate");
-    var displayDate = $(bookStartDate[0]).text();
-    $("#threeBedRoom").html(displayDate);
+// $.get("rooms.xml"), function (xml) {
+//     var bookStartDate = $(xml).find("bookStartDate");
+//     var displayDate = $(bookStartDate[0]).text();
+//     $("#threeBedRoom").html(displayDate);
 
-}
+// }
 
 $("#search").click(function () {
     var singleBedRoomSuiteCount = 0;
@@ -59,19 +59,39 @@ $("#search").click(function () {
 
     var selectedArrivalDate = $("#arrivalDate").val();
     var selectedDepartureDate = $("#departureDate").val();
+    
 
     $.get("rooms.xml", function (xml) {
         $(xml).find("rooms").each(function() {
 
-        var arrivalDate = $(this).find("bookStartDate").text();
-        var departureDate = $(this).find("bookEndDate").text();
-        var roomType = $(this).find("roomType").text();            
+        var roomStartDate = $(this).find("bookStartDate").text();
+        var roomEndDate = $(this).find("bookEndDate").text();
+        var roomType = $(this).find("roomType").text();
+        
+        roomStartDate = roomStartDate.split("-");
+        roomEndDate = roomEndDate.split("-");
+
+        // alert(roomStartDate[0]);
+        // alert(roomStartDate[1]);
+        // alert(roomStartDate[2]);
+
+        newRoomStartDate = new Date(roomStartDate[0], roomStartDate[1] , roomStartDate[2]);
+
+
+
 
         // single bedroom suite
-        if ((roomType === "Single Bedroom Suite" && !((departureDate < selectedArrivalDate) && (departureDate < selectedDepartureDate)
-        && (arrivalDate < selectedArrivalDate) && (departureDate < selectedArrivalDate)))) {
-           singleBedRoomSuiteCount++;     
-        }
+        // if ((roomType === "Single Bedroom Suite" && !((selectedArrivalDate > roomStartDate) && (selectedDepartureDate < roomStartDate)
+        // && (selectedArrivalDate > roomEndDate) && selectedDepartureDate > roomEndDate))) {
+        //    singleBedRoomSuiteCount++;     
+        // }
+
+        // if (Date.parse(selectedArrivalDate) == roomStartDate) {
+        //     alert(roomStartDate  + " Hey");
+        // }
+        // else {
+        //     alert(selectedArrivalDate);
+        // }
 
         // 3-single bedroom suite
         // if ((roomType === "3-Single Bedroom Suite" && !((departureDate < selectedArrivalDate) && (departureDate < selectedDepartureDate) &&
@@ -100,7 +120,7 @@ $("#search").click(function () {
 
         });
 
-        console.log(twoSingleRoomSuiteCount);
+        // console.log(twoSingleRoomSuiteCount);
 
         $("#singleBedRoomSuite").html(singleBedRoomSuiteCount);
         // $("#twoBedRoomSuite").html(twoSingleRoomSuiteCount);
