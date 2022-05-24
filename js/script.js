@@ -59,37 +59,22 @@ $("#search").click(function () {
   
 
          if ((roomType === "Single Bedroom Suite")) {
-                if(!((roomStartDate >= selectedArrivalDate && roomStartDate <=
-                 selectedDepartureDate && roomEndDate >= selectedArrivalDate &&
-                 roomEndDate <= selectedDepartureDate))) {
-                     alert("Not booked " + roomNumber);
-                 } 
-                 else {
-                     alert("booked " + roomNumber);
-                 }
+                if (!((newSelectedArrivalDate > newRoomStartDate && newSelectedDepartureDate < newRoomEndDate)
+                    || (newSelectedArrivalDate < newRoomStartDate && newSelectedDepartureDate > newRoomEndDate) ||
+                    (newSelectedArrivalDate < newRoomStartDate && newSelectedDepartureDate < newRoomEndDate) ||
+                    (newSelectedArrivalDate>newRoomStartDate && newSelectedDepartureDate>newRoomEndDate))) {
+                        alert("it id booked " + roomNumber )
+                    }
 
-         }
-        
-
-
-  
-        
-
-        });
+            // if (((roomStartDate >= selectedArrivalDate && roomStartDate <= selectedDepartureDate) 
+            //  (roomEndDate >= selectedArrivalDate && roomEndDate <= selectedDepartureDate))) {
+            //      alert ("booked " + roomNumber )
+             }
+             else {
+                 alert('not booked ' + roomNumber );
+             }
+        };
     },
-    
     ) 
 });
-
-    
-
-
-        
-
-
-
-
-
-
-
-
+})
