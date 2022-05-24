@@ -1,20 +1,6 @@
 
 
 
-// $(function () {
-//     $("#arrivalDate").datepicker({
-//         minDate: 0
-//     });
-//     $("#departureDate").datepicker({
-//         minDate: 0
-//     });  
-// });
-
-
-
-   
- 
-
 
  $(function () {
     // initializing arrival date and departure date
@@ -41,13 +27,8 @@
 // });
 
 
-// get bookstartdate and book end date
-// $.get("rooms.xml"), function (xml) {
-//     var bookStartDate = $(xml).find("bookStartDate");
-//     var displayDate = $(bookStartDate[0]).text();
-//     $("#threeBedRoom").html(displayDate);
 
-// }
+
 
 $("#search").click(function () {
     var singleBedRoomSuiteCount = 0;
@@ -67,67 +48,34 @@ $("#search").click(function () {
         var roomStartDate = $(this).find("bookStartDate").text();
         var roomEndDate = $(this).find("bookEndDate").text();
         var roomType = $(this).find("roomType").text();
+       var roomNumber = $(this).attr("roomNumber"); 
+       
+       
+        var newRoomStartDate = new Date(roomStartDate);
+        var newRoomEndDate = new Date(roomEndDate);
+
+        var newSelectedArrivalDate = new Date(selectedArrivalDate);
+        var newSelectedDepartureDate = new Date(selectedDepartureDate);
+  
+
+         if ((roomType === "Single Bedroom Suite")) {
+                if(!((roomStartDate >= selectedArrivalDate && roomStartDate <=
+                 selectedDepartureDate && roomEndDate >= selectedArrivalDate &&
+                 roomEndDate <= selectedDepartureDate))) {
+                     alert("Not booked " + roomNumber);
+                 } 
+                 else {
+                     alert("booked " + roomNumber);
+                 }
+
+         }
         
-        roomStartDate = roomStartDate.split("-");
-        roomEndDate = roomEndDate.split("-");
-
-        // alert(roomStartDate[0]);
-        // alert(roomStartDate[1]);
-        // alert(roomStartDate[2]);
-
-        newRoomStartDate = new Date(roomStartDate[0], roomStartDate[1] , roomStartDate[2]);
 
 
-
-
-        // single bedroom suite
-        // if ((roomType === "Single Bedroom Suite" && !((selectedArrivalDate > roomStartDate) && (selectedDepartureDate < roomStartDate)
-        // && (selectedArrivalDate > roomEndDate) && selectedDepartureDate > roomEndDate))) {
-        //    singleBedRoomSuiteCount++;     
-        // }
-
-        // if (Date.parse(selectedArrivalDate) == roomStartDate) {
-        //     alert(roomStartDate  + " Hey");
-        // }
-        // else {
-        //     alert(selectedArrivalDate);
-        // }
-
-        // 3-single bedroom suite
-        // if ((roomType === "3-Single Bedroom Suite" && !((departureDate < selectedArrivalDate) && (departureDate < selectedDepartureDate) &&
-        //         (arrivalDate < selectedArrivalDate) && (departureDate < selectedArrivalDate)))) {
-        //     threeSingleBedRoomSuiteCount++;
-        // }
-
-        // // 2-single bedroom suite
-        // if ((roomType === "2-Single Bedroom Suite" && !((departureDate < selectedArrivalDate) && (departureDate < selectedDepartureDate) &&
-        //         (arrivalDate < selectedArrivalDate) && (departureDate < selectedArrivalDate)))) {
-        //     twoSingleRoomSuiteCount++;
-        // }
-
-        // // single room
-        // if ((roomType === "Single Room" && !((departureDate < selectedArrivalDate) && (departureDate < selectedDepartureDate) &&
-        //         (arrivalDate < selectedArrivalDate) && (departureDate < selectedArrivalDate)))) {
-        //     singleRoomCount++;
-        // }
-
-        // // double room
-        // if ((roomType === "Double Room" && !((departureDate < selectedArrivalDate) && (departureDate < selectedDepartureDate) &&
-        //         (arrivalDate < selectedArrivalDate) && (departureDate < selectedArrivalDate)))) {
-        //     doubleRoomCount++;
-        // }
+  
         
 
         });
-
-        // console.log(twoSingleRoomSuiteCount);
-
-        $("#singleBedRoomSuite").html(singleBedRoomSuiteCount);
-        // $("#twoBedRoomSuite").html(twoSingleRoomSuiteCount);
-        // $("#threeSingleBedRoomSuite").html(threeSingleBedRoomSuiteCount);
-        // $("#singleBedRoom").html(singleRoomCount);
-        // $("#doubleBedRoom").html(doubleRoomCount);
-
     },
     
     ) 
