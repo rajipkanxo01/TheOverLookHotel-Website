@@ -13,21 +13,6 @@
 }),
 
 
-// on search button click
-// $("#search").click(function () {
-//     var selectedArrivalDate = $("#arrivalDate").val();
-//     var selectedDepartureDate = $("#departureDate").val();
-
-
-
-//     if (Date.parse(selectedArrivalDate) > Date.parse(selectedDepartureDate)) {
-//         alert('From date should be before to date');
-//     }
-
-// });
-
-
-
 
 
 $("#search").click(function () {
@@ -40,22 +25,20 @@ $("#search").click(function () {
 
     var selectedArrivalDate = $("#arrivalDate").val();
     var selectedDepartureDate = $("#departureDate").val();
+
+        if (Date.parse(selectedArrivalDate) > Date.parse(selectedDepartureDate)) {
+             alert('From date should be before to date');
+     }
     
 
-    $.get("rooms.xml", function (xml) {
+    $.get("../xml/rooms.xml", function (xml) {
         $(xml).find("rooms").each(function() {
 
         var roomStartDate = $(this).find("bookStartDate").text();
         var roomEndDate = $(this).find("bookEndDate").text();
         var roomType = $(this).find("roomType").text();
        var roomNumber = $(this).attr("roomNumber"); 
-       
-       
-        var newRoomStartDate = new Date(roomStartDate);
-        var newRoomEndDate = new Date(roomEndDate);
-
-        var newSelectedArrivalDate = new Date(selectedArrivalDate);
-        var newSelectedDepartureDate = new Date(selectedDepartureDate);
+    
   
 
         if ((roomType === "Single Bedroom Suite")) {
